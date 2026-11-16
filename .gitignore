@@ -1,0 +1,18 @@
+*.exe
+*.dll
+*.pdb
+target/
+rust-bridge/*/target/
+.git/
+settings.json
+**/settings.json
+dsd_log.txt
+dsd_log_copy.txt
+level.txt
+frequency.txt
+modulation.txt
+smeter.txt
+RECORDER MP3/
+*.lnk
+Thumbs.db
+.DS_Store

@@ -1,0 +1,26 @@
+[package]
+name = "gui-controller"
+version = "1.7.0"
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+encoding_rs = "0.8"
+eframe = "0.27"
+egui = "0.27"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = "0.4"
+cpal = "0.15"
+rubato = "0.15"
+hound = "3"
+windows = { version = "0.62", features = [
+    "Win32_Foundation",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_System_Threading",
+] }
+cwdit-dsp = { git = "https://github.com/swilcox/cw-dit" }
+cwdit-morse = { git = "https://github.com/swilcox/cw-dit" }
+
+[build-dependencies]
+winresource = "0.1"
