@@ -58,3 +58,8 @@ Copy-Item "target\release\gui-controller.exe" "..\..\R2GFK SunDEC.exe" -Force
 Проект использует DSD-neo как внешний процесс (не включает его код).  
 DSD-neo распространяется под GPL-3.0.  
 Остальные библиотеки — под MIT/Apache-2.0.
+
+<img width="418" height="458" id="01a1e6c8-6c12-799d-9071-c6638103baaf">
+<img width="419" height="458" id="01a1e6c8-6c18-7777-98e4-6b13ae1055cb">
+<img src="https://github.com/user-attachments/assets/5d183c7f-3780-4db1-9870-d1566ce1d169" width="419" height="459">
+<img width="419" height="458" id="01a1e6c8-6dc7-7123-a26b-f10c947772d6">
