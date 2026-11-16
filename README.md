@@ -59,7 +59,15 @@ Copy-Item "target\release\gui-controller.exe" "..\..\R2GFK SunDEC.exe" -Force
 DSD-neo распространяется под GPL-3.0.  
 Остальные библиотеки — под MIT/Apache-2.0.
 
-<img width="418" height="458" id="01a1e6c8-6c12-799d-9071-c6638103baaf">
-<img width="419" height="458" id="01a1e6c8-6c18-7777-98e4-6b13ae1055cb">
-<img src="https://github.com/user-attachments/assets/5d183c7f-3780-4db1-9870-d1566ce1d169" width="419" height="459">
-<img width="419" height="458" id="01a1e6c8-6dc7-7123-a26b-f10c947772d6">
+## Демонстрация работы
+
+<table>
+<tr>
+<td align="center"><img src="https://github.com/user-attachments/assets/c7f18ace-433d-468f-83ae-18efdecb7e61" alt="Скриншот #1" width="450"></td>
+<td align="center"><img src="https://github.com/user-attachments/assets/f142fc60-b9f9-4b5a-8418-3c8f9dbb87f9" alt="Скриншот #2" width="450"></td>
+</tr>
+<tr>
+<td align="center"><img src="https://github.com/user-attachments/assets/5d183c7f-3780-4db1-9870-d1566ce1d169" alt="Скриншот #3" width="450"></td>
+<td align="center"><img src="https://github.com/user-html-attachments/assets/9cf0eca1-f68c-4104-be78-0b80023e60ec" alt="Скриншот #4" width="450"></td>
+</tr>
+</table>
