@@ -1,18 +1,37 @@
+# 📦 Скомпилированные файлы и сборки
 *.exe
 *.dll
 *.pdb
-target/
+
+target/                     # Папка компиляции Rust
 rust-bridge/*/target/
-.git/
-settings.json
-**/settings.json
-dsd_log.txt
-dsd_log_copy.txt
+
+# 🖥 Личные логи и настройки пользователя
+dsd_log.*
 level.txt
 frequency.txt
 modulation.txt
 smeter.txt
 RECORDER MP3/
-*.lnk
+
+# ⚙️ Конфигурация среды разработки
+settings.json
+**/settings.json
+
+# 🔐 Конфиденциальная информация
+*.env*
+secrets/
+keys/
+config.secret
+
+# 🗑 Кэш операционной системы и временные файлы
 Thumbs.db
 .DS_Store
+*.lnk
+
+# ✅ Игнорируем всё на диске D:\ кроме самого проекта
+!README.md
+!R2GFK-SunDEC.exe
+!rust-bridge/
+!agignore/
+*
