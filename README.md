@@ -1,60 +1,97 @@
-# R2GFK SunDEC
+# R2GFK SunDEC 📡🔊 — декодер радиосигналов через TCI
 
-Программа для декодирования радиорежимов (DMR, аналог FM, CW) через TCI. Работает в связке с ExpertSDR3 и DSD-neo.
+**R2GFK SunDEC** — это графическая оболочка для работы с цифровыми (*DMR*, *P25*, *NXDN*) и аналоговыми режимами (*FM*, *CW*). Программа использует мост [TCI](https://tci.sh/) для взаимодействия софтверного приёмника *(например, ExpertSDR3)* с внешним декодером сигналов (`decoder.exe`).
 
-## Что умеет
+> ⚠️ **Важно:** программа создана исключительно для личных нужд автора при помощи ИИ. Коммерческое использование запрещено. Автор не гарантирует дальнейшую поддержку или обновления проекта.
 
-- **DMR** — декодирование, запись в MP3, вывод звука в колонки, расшифровка с ключами (`-H`/`-b`), Talker Alias (с кириллицей), GPS, Text, Тип вызова, Шифрование.
-- **Аналог (FM)** — CTCSS/DCS, запись 1:1, модуляция из TCI.
-- **CW** — собственный декодер (Goertzel), автоопределение тона, подсветка сокращений, WPM, АРУ.
-- **Запись** — WAV → MP3 через `lame.exe`.
+---
 
-## Как это работает
+## ✅ Требования
 
-ExpertSDR3 (TCI) → bridge.exe → decoder.exe (DSD-neo) → UDP → R2GFK SunDEC.exe
+Для запуска программы необходимы следующие компоненты:
 
-- `bridge.exe` — мост между ExpertSDR3 и DSD-neo (написан на Rust).
-- `decoder.exe` — DSD-neo (внешний декодер).
-- `R2GFK SunDEC.exe` — GUI (Rust + egui).
-- `lame.exe` — конвертация WAV в MP3.
+| Компонент | Описание |
+|-|-|
+| **ExpertSDR3** | Основной софтверный приёмник. Должен быть запущен перед запуском программы. |
+| **TCI** | Мост между SDR-программами и внешними приложениями. Обязателен для работы. |
+| **Windows** | Минимальная версия — Windows 10/11. Для записи звука в MP3 используется утилита LAME, которая работает только под Windows. |
+| **Rust Runtime** | Не требуется для использования готовой сборки. Нужен только разработчикам для пересборки ядра Rust. |
 
-## Сборка
+---
 
-### Требования
-- Rust (stable, MSVC toolchain)
-- Windows 10/11
+## 🎯 Готовый пакет (для простых пользователей)
 
-### Bridge
-cd rust-bridge\tci-bridge
+Самый простой способ получить работающую версию:
+
+1. Перейдите во вкладку **Releases** на странице репозитория.
+2. Скачайте архив с последней версией (`*.zip`).
+3. Распакуйте его куда угодно.
+4. Запустите файл `R2GFK Sun DEC.exe`.
+*(Не забудьте предварительно открыть ExpertSDR3 и TCI).*  
+Готово! Всё работает сразу.
+
+Если вы скачали исходники этого репозитория, рабочая папка находится внутри архива → `/release/`. Просто распакуйте её и запустите программу оттуда.
+
+---
+
+## 🛠 Сборка проекта из исходников (для разработчиков)
+
+Этот проект имеет гибридную архитектуру. Графический интерфейс написан на Rust с использованием GUI-библиотеки egui, а обработка сигнала реализована в отдельном ядре Rust.
+
+Чтобы собрать ядро самостоятельно, вам понадобятся:
+- ✅ **Rust** *(stable, MSVC toolchain)* — установщик доступен здесь → [rustup.rs](https://rustup.rs/)
+- ✅ **C/C++ компилятор** *(Visual Studio Build Tools)*.
+
+После установки откройте консоль PowerShell и выполните команду проверки:
+Вы должны увидеть номер версии языка.
+
+### Процесс сборки
+
+В корне проекта лежит скрипт `build.bat`, который автоматически собирает ядро Rust и обновляет библиотеку `rust_bridge.dll` в рабочей директории `/release/`.
+
+1. Откройте папку с проектом в проводнике.
+2. Дважды кликните по файлу `build.bat`. Система попросит разрешения на запуск скрипта от имени администратора — разрешите.
+*(Примечание: все остальные файлы уже собраны и находятся в папке /release/. Вы можете использовать эту папку прямо сейчас без компиляции.)*
+
+Скрипт выполняет следующие действия:
+```powershell
+@echo off
+REM Этот батник собирает только ядро Rust.
+cd rust-bridge\rust-bridge
 cargo build --release
-Copy-Item "target\release\tci-bridge.exe" "..\..\bridge.exe" -Force
+copy target\release\rust_bridge.dll ..\..\release\ >nul # Обновляем библиотеку в рабочей директории
+pause
 
-### GUI
-cd rust-bridge\gui-controller
-cargo build --release
-Copy-Item "target\release\gui-controller.exe" "..\..\R2GFK SunDEC.exe" -Force
+Структура проекта
+Папка/Файл	Описание
+/release/	Рабочая сборка программы. Содержит все готовые *.exe, *.dll и настройки. Пользователи могут просто распаковать этот каталог и запустить bridge.exe.
+/rust-bridge/rust-bridge	Исходные коды низкоуровневого ядра на языке Rust. Собирается в динамическую библиотеку rust_bridge.dll.
+/rust-bridge/gui-controller	Исходные коды графического интерфейса на Rust + eframe/egui. Собирается в исполняемый файл gui-controller.exe, который переименовывается в R2GFK Sun DEC.exe.
+build.bat	Скрипт для автоматической пересборки ядра Rust.
+settings.json, frequency.txt	Конфигурационные файлы пользователя.
+🧩 Архитектура и компоненты
 
-## Используемые компоненты
+Программа состоит из следующих компонентов:
 
-- **DSD-neo** — декодер DMR/P25/NXDN/D-STAR/YSF/M17/dPMR/TETRA/EDACS/ProVoice.  
-  [github.com/arancormonk/dsd-neo](https://github.com/arancormonk/dsd-neo)
-- **cw-dit** — библиотека для CW-декодера.  
-  [github.com/swilcox/cw-dit](https://github.com/swilcox/cw-dit)
-- **eframe / egui** — графический интерфейс.  
-  [github.com/emilk/egui](https://github.com/emilk/egui)
-- **cpal** — вывод звука.  
-  [github.com/RustAudio/cpal](https://github.com/RustAudio/cpal)
-- **rubato** — ресемплинг аудио.  
-  [github.com/HEnquist/rubato](https://github.com/HEnquist/rubato)
-- **hound** — запись WAV.  
-  [github.com/ruuda/hound](https://github.com/ruuda/hound)
-- **encoding_rs** — корректная кодировка кириллицы.  
-  [github.com/hsivonen/encoding_rs](https://github.com/hsivonen/encoding_rs)
-- **lame** — конвертация WAV в MP3.  
-  [lame.sourceforge.net](https://lame.sourceforge.net)
+Компонент	Описание
+ExpertSDR3	Основной софтверный приёмник.
+TCI	Мост между SDR-программами и внешними приложениями.
+Decoder.exe	Внешний декодер цифровых протоколов. Используется модифицированный DSD++ (fork DSD-neo).
+Bridge.exe	Ядро обработки сигнала, написано на Rust. Собирается в динамическую библиотеку (rust_bridge.dll) и отвечает за обработку буферов памяти и протокола TCI.
+R2GFK Sun DEC.exe	Главная программа-оболочка, написана на Rust с использованием egui. Отвечает за графику, логику и вызов внешних программ.
+Nircmd.exe / Nircmdc.exe	Утилиты для автоматизации управления звуком и окнами в Windows.
+Lame.exe	Кодек MP3 для записи звука.
+cpal	Библиотека для вывода звука. github.com/RustAudio/cpal
+rubato	Ресемплинг аудио. github.com/HEnquist/rubato
+hound	Запись WAV. github.com/ruuda/hound
+encoding_rs	Корректная кодировка кириллицы. github.com/hsivonen/encoding_rs
+cw-dit	Декодер CW. github.com/swilcox/cw-dit
+dsd-neo	Движок декодера. github.com/arancormonk/dsd-neo
 
-## Лицензия
+🖼 Демонстрация интерфейса
 
-Проект использует DSD-neo как внешний процесс (не включает его код).  
-DSD-neo распространяется под GPL-3.0.  
-Остальные библиотеки — под MIT/Apache-2.0.
+<table> <tr> <td><img src="https://user-images.githubusercontent.com/c7f18ace-433d-468f-83ae-18efdecb7e61" width=400></td> <td><img src="https://user-images.githubusercontent.com/f142fc60-b9f9-4b5a-8418-3c8f9dbb87f9" width=400></td> </tr> <tr> <td><img src="https://user-images.githubusercontent.com/5d183c7f-3780-4db1-9870-d1566ce1d169" width=400></td> <td><img src="https://user-images.githubusercontent.com/9cf0eca1-f68c-4104-be78-0b80023ec60" width=400></td> </tr> </table>
+
+🤝 Поддержка и вопросы
+
+Это личный некоммерческий проект. Официальной поддержки нет. Вы можете оставлять комментарии под релизами или создавать Issues, но автор оставляет за собой право отвечать на них по своему усмотрению. Спасибо за интерес!

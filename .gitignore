@@ -1,18 +1,22 @@
-*.exe
-*.dll
-*.pdb
-target/
-rust-bridge/*/target/
-.git/
-settings.json
-**/settings.json
-dsd_log.txt
-dsd_log_copy.txt
-level.txt
-frequency.txt
-modulation.txt
-smeter.txt
-RECORDER MP3/
-*.lnk
+# Игнорируем временные файлы Windows/MacOS
 Thumbs.db
 .DS_Store
+
+# Игнорируем старые структуры и служебные файлы
+RECORDER MP3/
+dependencies/
+rust-bridge/*/target/
+*.pdb
+*.suo
+*.user
+*.sln
+*.csproj
+
+# Игнорируем ненужные логи
+dsd_log.*
+level.txt
+smeter.txt
+
+# Игнорируем лишние настройки пользователя
+modulation.txt # Оставить только если он нужен при сборке
+frequency.txt # Оставить только если он нужен при сборке
