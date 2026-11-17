@@ -113,14 +113,17 @@ rustc --version
 ## 🖼 Демонстрация интерфейса
 
 <table>
-<tr>
-<td><img src="https://user-images.githubusercontent.com/c7f18ace-433d-468f-83ae-18efdecb7e61" width=400></td>
-<td><img src="https://user-images.githubusercontent.com/f142fc60-b9f9-4b5a-8418-3c8f9dbb87f9" width=400></td>
-</tr>
-<tr>
-<td><img src="https://user-images.githubusercontent.com/5d183c7f-3780-4db1-9870-d1566ce1d169" width=400></td>
-<td><img src="https://user-images.githubusercontent.com/9cf0eca1-f68c-4104-be78-0b80023ec60" width=400></td>
-</tr>
+  <tr>
+    <!-- Верхний ряд -->
+    <td align="center"><img width=418 height=458 alt="Главный интерфейс" src="https://github.com/user-attachments/assets/09d78b67-7aaa-4a69-851f-841337551b8d"></td>
+    <td align="center"><img width=419 height=458 alt="Настройки декодера" src="https://github.com/user-attachments/assets/1d72d7bc-f244-445d-9058-05c3aa1dd44b"></td>
+  </tr>
+  
+  <tr>
+    <!-- Нижний ряд -->
+    <td align="center"><img width=419 height=459 alt="CW-декодер" src="https://github.com/user-backgrounds/assets/a4d4d187-07c7-4872-a2e5-5dd9146c0155"></td> 
+    <td align="center"><img width=419 height=458 alt="Аналог FM" src="https://github.com/user-attachments/assets/49eba8a8-0163-44b4-b7cb-78d82ba3ba57"></td>
+  </tr>
 </table>
 
 ***
