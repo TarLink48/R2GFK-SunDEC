@@ -49,18 +49,11 @@
 - ✅ **C/C++ компилятор** *(Visual Studio Build Tools)*.
 
 После установки откройте консоль PowerShell и выполните команду проверки:
+
 Вы должны увидеть номер версии языка.
-
 ### Процесс сборки
-
 В корне проекта лежит скрипт `build.bat`, который автоматически собирает ядро Rust и обновляет библиотеку `rust_bridge.dll` в рабочей директории `/release/`.
-
-1. Откройте папку с проектом в проводнике.
-2. Дважды кликните по файлу `build.bat`. Система попросит разрешения на запуск скрипта от имени администратора — разрешите.
-*(Примечание: все остальные файлы уже собраны и находятся в папке /release/. Вы можете использовать эту папку прямо сейчас без компиляции.)*
-
 Скрипт выполняет следующие действия:
-
 ```powershell
 @echo off
 REM Этот батник собирает только ядро Rust.
@@ -77,8 +70,6 @@ pause
 /rust-bridge/gui-controller	Исходные коды графического интерфейса на Rust + eframe/egui. Собирается в исполняемый файл gui-controller.exe, который переименовывается в R2GFK Sun DEC.exe.
 build.bat	Скрипт для автоматической пересборки ядра Rust.
 settings.json, frequency.txt	Конфигурационные файлы пользователя.
-
-
 🧩 Архитектура и компоненты
 
 Программа состоит из следующих компонентов:
@@ -97,27 +88,9 @@ hound	Запись WAV. github.com/ruuda/hound
 encoding_rs	Корректная кодировка кириллицы. github.com/hsivonen/encoding_rs
 cw-dit	Декодер CW. github.com/swilcox/cw-dit
 dsd-neo	Движок декодера. github.com/arancormonk/dsd-neo
-
-
-
 🖼 Демонстрация интерфейса
-
-<table>
-<tr>
-<td align="center"><img src="https://github.com/user-attachments/assets/c7f18ace-433d-468f-83ae-18efdecb7e61" alt="Скриншот #1" width="450"></td>
-<td align="center"><img src="https://github.com/user-attachments/assets/f142fc60-b9f9-4b5a-8418-3c8f9dbb87f9" alt="Скриншот #2" width="450"></td>
-</tr>
-<tr>
-<td align="center"><img src="https://github.com/user-attachments/assets/5d183c7f-3780-4db1-9870-d1566ce1d169" alt="Скриншот #3" width="450"></td>
-<td align="center"><img src="https://github.com/user-html-attachments/assets/9cf0eca1-f68c-4104-be78-0b80023e60ec" alt="Скриншот #4" width="450"></td>
-</tr>
-</table>
-
-
+	
+	
 🤝 Поддержка и вопросы
 
 Это личный некоммерческий проект. Официальной поддержки нет. Вы можете оставлять комментарии под релизами или создавать Issues, но автор оставляет за собой право отвечать на них по своему усмотрению. Спасибо за интерес!
-=======
-Проект использует DSD-neo как внешний процесс (не включает его код).  
-DSD-neo распространяется под GPL-3.0.  
-Остальные библиотеки — под MIT/Apache-2.0.
