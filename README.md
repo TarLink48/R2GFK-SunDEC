@@ -115,14 +115,14 @@ rustc --version
 <table>
   <tr>
     <!-- Верхний ряд -->
-    <td align="center"><img width=418 height=458 alt="Главный интерфейс" src="https://github.com/user-attachments/assets/09d78b67-7aaa-4a69-851f-841337551b8d"></td>
-    <td align="center"><img width=419 height=458 alt="Настройки декодера" src="https://github.com/user-attachments/assets/1d72d7bc-f244-445d-9058-05c3aa1dd44b"></td>
+    <td align="center"><img width=418 height=458 alt="1" src="https://github.com/user-attachments/assets/72c66692-2ba3-48cd-85a5-f3017bf79ec5"></td>
+    <td align="center"><img width=419 height=458 alt="2" src="https://github.com/user-attachments/assets/5aca8532-c588-4a77-bf96-c6ebd615cdd5"></td>
   </tr>
   
   <tr>
     <!-- Нижний ряд -->
-    <td align="center"><img width=419 height=459 alt="CW-декодер" src="https://github.com/user-backgrounds/assets/a4d4d187-07c7-4872-a2e5-5dd9146c0155"></td> 
-    <td align="center"><img width=419 height=458 alt="Аналог FM" src="https://github.com/user-attachments/assets/49eba8a8-0163-44b4-b7cb-78d82ba3ba57"></td>
+    <td align="center"><img width=419 height=459 alt="3" src="https://github.com/user-attachments/assets/55587b54-ce24-42f4-89a6-0470127bdf63"></td> 
+    <td align="center"><img width=419 height=458 alt="4" src="https://github.com/user-attachments/assets/d7012003-87a1-4662-bba8-fe25991773a7"></td>
   </tr>
 </table>
 
@@ -131,4 +131,4 @@ rustc --version
 ## 🤝 Поддержка и вопросы
 
 Это личный некоммерческий проект. Официальной поддержки нет.
-Спасибо за интерес!
+Спасибо за интерес, 73 !
