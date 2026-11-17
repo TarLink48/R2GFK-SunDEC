@@ -6,6 +6,26 @@
 
 ---
 
+***
+
+## 🖼 Демонстрация интерфейса
+
+<table>
+  <tr>
+    <!-- Верхний ряд -->
+    <td align="center"><img width=418 height=458 alt="1" src="https://github.com/user-attachments/assets/72c66692-2ba3-48cd-85a5-f3017bf79ec5"></td>
+    <td align="center"><img width=419 height=458 alt="2" src="https://github.com/user-attachments/assets/5aca8532-c588-4a77-bf96-c6ebd615cdd5"></td>
+  </tr>
+  
+  <tr>
+    <!-- Нижний ряд -->
+    <td align="center"><img width=419 height=459 alt="3" src="https://github.com/user-attachments/assets/55587b54-ce24-42f4-89a6-0470127bdf63"></td> 
+    <td align="center"><img width=419 height=458 alt="4" src="https://github.com/user-attachments/assets/d7012003-87a1-4662-bba8-fe25991773a7"></td>
+  </tr>
+</table>
+
+***
+
 ## Что умеет?
 -   **DMR** — декодирование, запись в MP3, вывод звука в колонки, Talker Alias (с кириллицей), GPS, Text, Тип вызова.
 -   **Аналог (FM)** — CTCSS/DCS, запись 1:1, модуляция из TCI.
@@ -108,25 +128,6 @@ rustc --version
 | **cw-dit** | Декодер CW. [github.com/swilcox/cw-dit](https://github.com/swilcox/cw-dit) |
 | **dsd-neo** | Движок декодера. [github.com/arancormonk/dsd-neo](https://github.com/arancormonk/dsd-neo) |
 
-***
-
-## 🖼 Демонстрация интерфейса
-
-<table>
-  <tr>
-    <!-- Верхний ряд -->
-    <td align="center"><img width=418 height=458 alt="1" src="https://github.com/user-attachments/assets/72c66692-2ba3-48cd-85a5-f3017bf79ec5"></td>
-    <td align="center"><img width=419 height=458 alt="2" src="https://github.com/user-attachments/assets/5aca8532-c588-4a77-bf96-c6ebd615cdd5"></td>
-  </tr>
-  
-  <tr>
-    <!-- Нижний ряд -->
-    <td align="center"><img width=419 height=459 alt="3" src="https://github.com/user-attachments/assets/55587b54-ce24-42f4-89a6-0470127bdf63"></td> 
-    <td align="center"><img width=419 height=458 alt="4" src="https://github.com/user-attachments/assets/d7012003-87a1-4662-bba8-fe25991773a7"></td>
-  </tr>
-</table>
-
-***
 
 ## 🤝 Поддержка и вопросы
 
